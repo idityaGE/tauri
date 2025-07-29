@@ -13,6 +13,10 @@ function App() {
     setGreetMsg(await invoke("greet", { name }));
   }
 
+  async function startMonitoring() {
+    await invoke("start_monitoring");
+  }
+
   return (
     <main className="container">
       <Titlebar />
@@ -47,6 +51,8 @@ function App() {
         <button type="submit">Greet</button>
       </form>
       <p>{greetMsg}</p>
+
+      <button onClick={startMonitoring}>Start Monitoring</button>
     </main>
   );
 }
